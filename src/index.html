@@ -7,19 +7,30 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
 
-<body class="overflow-hidden">
+<body class="bg-black">
+  <div id="invertedcursor"></div>
   <app-root></app-root>
-  <div class="bg z-10"></div>
-  <div class='cursor' id="cursor"></div>
+
   <script>
-    var cursor = document.getElementById("cursor");
-    document.body.addEventListener("mousemove", function (e) {
-      cursor.style.left = e.clientX + "px",
-        cursor.style.top = e.clientY + "px";
-    });
+    document.body.onmousemove = function (e) {
+      document.documentElement.style.setProperty(
+        '--x', (
+          e.clientX + window.scrollX
+        )
+      + 'px'
+      );
+      document.documentElement.style.setProperty(
+        '--y', (
+          e.clientY + window.scrollY
+        )
+      + 'px'
+      );
+    }
   </script>
+
 </body>
 
 </html>
