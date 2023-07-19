@@ -13,6 +13,7 @@ import { SoonComponent } from './pages/soon/soon.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReplaceFirstSpaceWithBrPipe } from './pages/soon/replace-first-space-with-br.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MarqueeComponent,
     ProjectComponent,
     LandingComponent,
-    SoonComponent
+    SoonComponent,
+    ReplaceFirstSpaceWithBrPipe
   ],
   imports: [
     BrowserModule,
